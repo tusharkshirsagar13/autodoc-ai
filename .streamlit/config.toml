@@ -1,0 +1,25 @@
+[theme]
+base = "light"
+primaryColor = "#1F4E8C"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F3F6FA"
+textColor = "#1B2A41"
+font = "sans serif"
+
+[server]
+maxUploadSize = 50
+headless = true
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "type"
+
+[theme.sidebar]
+backgroundColor = "#0F1B2D"
+secondaryBackgroundColor = "#1A2B44"
+textColor = "#D6DEE9"
+borderColor = "#2C4363"

@@ -1,0 +1,20 @@
+# Secrets
+.env
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+# Runtime data (documents may be confidential)
+data/*
+!data/.gitkeep
+uploads/*
+!uploads/.gitkeep
+chroma_db/*
+!chroma_db/.gitkeep
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

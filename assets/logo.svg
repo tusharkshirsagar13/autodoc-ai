@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="48" viewBox="0 0 240 48">
+  <rect x="2" y="8" width="32" height="32" rx="7" fill="#1F4E8C"/>
+  <path d="M10 31 L18 15 L26 31" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="18" cy="15" r="2.6" fill="#7FB2E5"/><circle cx="10" cy="31" r="2.6" fill="#7FB2E5"/><circle cx="26" cy="31" r="2.6" fill="#7FB2E5"/>
+  <text x="44" y="25" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF">AutoDoc AI</text>
+  <text x="44" y="39" font-family="Helvetica, Arial, sans-serif" font-size="8.2" letter-spacing="0.6" fill="#8EA0B8">ARCHITECTURE INTELLIGENCE</text>
+</svg>

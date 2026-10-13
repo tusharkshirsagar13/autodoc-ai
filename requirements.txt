@@ -1,0 +1,38 @@
+# AutoDoc AI — tested with Python 3.13 (requires Python >= 3.11).
+# Versions are pinned to the set used for the automated test run.
+#
+# Tip (saves ~2 GB on machines without an NVIDIA GPU): install the CPU-only
+# PyTorch build first, then this file:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
+
+# User interface
+streamlit==1.65.0
+plotly==7.1.0
+
+# Document processing
+pymupdf==1.28.2
+pytesseract==0.3.13
+pillow==12.3.0
+
+# Retrieval
+chromadb==1.5.9
+sentence-transformers==6.1.0
+numpy==2.5.3
+
+# Structured data, analysis and exports
+sqlalchemy==2.1.4
+pydantic==2.13.5
+networkx==3.6.1
+pandas==3.0.5
+openpyxl==3.1.5
+reportlab==5.0.1
+
+# LLM providers (official SDKs) and configuration
+openai==3.29.0
+anthropic==1.13.0
+httpx==0.28.1
+python-dotenv==1.2.3
+
+# Tests
+pytest==9.1.1

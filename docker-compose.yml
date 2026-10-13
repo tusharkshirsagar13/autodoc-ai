@@ -1,0 +1,17 @@
+services:
+  autodoc:
+    build: .
+    image: autodoc-ai:1.0
+    env_file:
+      - .env
+    environment:
+      # Reach an Ollama server running on the host machine
+      OLLAMA_HOST: http://host.docker.internal:11434
+    ports:
+      - "127.0.0.1:8501:8501"   # bound to localhost only: the prototype has no authentication
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./chroma_db:/app/chroma_db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

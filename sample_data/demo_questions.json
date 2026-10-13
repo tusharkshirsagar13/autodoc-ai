@@ -1,0 +1,42 @@
+{
+  "description": "Demonstration questions for the SYNTHETIC EBC HLD sample, with the evidence a correct answer must cite. Page numbers refer to the generated PDFs. Used by docs/user_guide.md; the retrieval tests check a subset automatically.",
+  "revision_A": [
+    {"question": "What are the major software components described in this document?",
+     "expected_evidence": "Table 4-1 (page 2): WheelSpeedProcessor, VehicleStateEstimator, BrakeTorqueCoordinator, BrakeActuatorManager, DiagnosticEventHandler, HmiWarningManager"},
+    {"question": "What is the unit and range of Sig_VehicleSpeed?",
+     "expected_evidence": "Signal table, section 6 (page 4): float32, km/h, 0..300"},
+    {"question": "Which interfaces or signals are associated with the VehicleStateEstimator?",
+     "expected_evidence": "Port table (page 3): RP_WheelSpeed / IF_WheelSpeed (required), PP_VehicleState / IF_VehicleState (provided); signals table (page 4)"},
+    {"question": "What dependencies are explicitly documented?",
+     "expected_evidence": "Table 7-1 (page 4), plus prose in section 4.2-4.4 (page 2)"},
+    {"question": "Summarize the functional flow for wheel slip control.",
+     "expected_evidence": "FF-02 (page 5): WheelSpeedProcessor -> VehicleStateEstimator -> BrakeTorqueCoordinator -> BrakeActuatorManager"},
+    {"question": "Which sections mention Sig_YawRate?",
+     "expected_evidence": "Only section 4.2 VehicleStateEstimator (page 2). Use 'Find every mention of a term' for an exact answer."},
+    {"question": "What is the ASIL rating of the BrakeTorqueCoordinator?",
+     "expected_evidence": "Not in the document — the correct behaviour is an 'insufficient evidence' response."}
+  ],
+  "revision_B": [
+    {"question": "How does degraded mode handling work?",
+     "expected_evidence": "Section 9 Degraded Mode Handling (page 5) — exists only in revision B"},
+    {"question": "What does the PedalInputHandler provide?",
+     "expected_evidence": "Table 4-1 (page 2), port PP_PedalRequest / IF_PedalRequest (page 3), Sig_BrakePedalPosition (page 4)"}
+  ],
+  "intentional_issues_revision_A": [
+    "Duplicate component identifier C-05 (DiagnosticEventHandler and HmiWarningManager)",
+    "HmiWarningManager has no description and no ports",
+    "IF_DiagEvent has no data elements",
+    "Port PP_ActuatorStatus references IF_ActuatorStatus, which is not defined",
+    "BrakeTorqueCoordinator depends on PedalInputHandler, which is not defined",
+    "Sig_YawRate and Sig_BrakePedalPosition are mentioned but not in the signal table",
+    "Sig_BrakeTorqueRequest has no consumer",
+    "VehicleStateEstimator is described differently in Table 4-1 and in Appendix A"
+  ],
+  "intentional_changes_A_to_B": [
+    "Component added: PedalInputHandler (C-06); component removed: HmiWarningManager",
+    "Interfaces added: IF_ActuatorStatus, IF_PedalRequest; ports added: PP_PedalRequest, RP_PedalRequest",
+    "Sig_VehicleSpeed changed from float32 km/h (0..300) to uint16 0.01 km/h (0..30000)",
+    "Sig_BrakeTorqueRequest range changed to 0..6000 Nm and a consumer was added",
+    "Section 9 Degraded Mode Handling added; FF-01 flow updated"
+  ]
+}
